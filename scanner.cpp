@@ -9,7 +9,7 @@
 // Uses nrf24l01 based on routines from rf24 port for raspberry pi
 // Credits to the arduino version of poormans scanner and authors of included files 
 // read more about the connections at blog.riyas.org
-#define CHANNELS  64
+#define CHANNELS  128
 int channel[CHANNELS];
 
 // greyscale mapping 
@@ -168,7 +168,23 @@ void printChannels(void)
 {
   // output approximate positions of WLAN-channels
   //Serial.println(">      1 2  3 4  5  6 7 8  9 10 11 12 13  14                     <");
-  printf(">      1 2  3 4  5  6 7 8  9 10 11 12 13  14                     <\n");
+  //printf(">      1 2  3 4  5  6 7 8  9 10 11 12 13  14                     <\n");
+  
+  int n, i = 0 ;
+  printf(">");
+  for ( n = 0 ; n < CHANNELS; n++ ) {
+    if( n%16==0 )
+        printf("%x", i++ % 16);
+    else
+      printf(" ");
+  }
+  printf("<\n");
+
+  printf(">");
+  for( n=0; n<CHANNELS; n++ )
+        printf("%x", n % 16);
+  printf("<\n");
+  
 }
 
 void setup()
