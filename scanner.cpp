@@ -215,10 +215,10 @@ void setup()
   bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);
  
   // Set SPI bus Speed
-  bcm2835_spi_setClockSpeed(BCM2835_SPI_SPEED_1MHZ); 
+  bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_32); 
   // This initialize the SPI bus with 
   // csn pin as chip select (custom or not)
-  bcm2835_spi_begin(csn_pin);
+  bcm2835_spi_begin();
   delay(100);
   delay( 5 ) ;
   disable();
