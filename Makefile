@@ -10,3 +10,5 @@ bcm2835.o: bcm2835.c
 scanner.o: scanner.cpp
 	gcc -Wall -fPIC  ${CCFLAGS} -c scanner.cpp
 
+clean:
+	rm -r scanner *.o
