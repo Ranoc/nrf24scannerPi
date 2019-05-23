@@ -11,4 +11,4 @@ scanner.o: scanner.cpp
 	gcc -Wall -fPIC  ${CCFLAGS} -c scanner.cpp
 
 clean:
-	rm -r scanner *.o
+	rm -f scanner *.o
